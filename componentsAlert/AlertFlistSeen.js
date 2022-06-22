@@ -1,4 +1,4 @@
-import React, {createRef, useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   StyleSheet,
   View,
@@ -12,6 +12,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import Ionic from 'react-native-vector-icons/Ionicons';
+
+import BottomSheet from 'react-native-gesture-bottom-sheet';
 
 const {width, height} = Dimensions.get('window');
 
@@ -81,7 +83,7 @@ const AlertFlistSeen = () => {
   const [onPressInActive, SetOnPressInActive] = useState(null);
 
   // BottomSheet
-
+  const bottomSheetRef = useRef();
   // FlatList
   const ListHeaderComponent = () => {
     return (
@@ -126,26 +128,35 @@ const AlertFlistSeen = () => {
               </Text>
             </View>
 
-            <TouchableOpacity style={styles.tob}>
+            <TouchableOpacity
+              style={styles.tob}
+              onPress={() => bottomSheetRef.current.show()}>
               <Ionic name="ellipsis-horizontal" size={20} color="#000308" />
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
+        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <BottomSheet
+            draggable={true}
+            hasDraggableIcon
+            ref={bottomSheetRef}
+            height={height / 3}>
+           
+          </BottomSheet>
+        </View>
       </View>
     );
   };
 
   return (
-    <View>
-      <FlatList
-        data={data}
-        keyExtractor={item => item.id}
-        renderItem={renderItem}
-        extraData={onPressInActive}
-        scrollEnabled={false}
-        ListHeaderComponent={ListHeaderComponent}
-      />
-    </View>
+    <FlatList
+      data={data}
+      keyExtractor={item => item.id}
+      renderItem={renderItem}
+      extraData={onPressInActive}
+      scrollEnabled={false}
+      ListHeaderComponent={ListHeaderComponent}
+    />
   );
 };
 
@@ -221,10 +232,10 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     alignSelf: 'center',
   },
-  panel:{
+  panel: {
     backgroundColor: '#ffffff',
     height: 300,
     borderRadius: 22,
     alignItems: 'center',
-  }
+  },
 });

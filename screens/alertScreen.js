@@ -12,7 +12,6 @@ const {width, height} = Dimensions.get('window');
 import Ionic from 'react-native-vector-icons/Ionicons';
 import AlertFlistNotSeen from '../componentsAlert/AlertFlistNotSeen';
 import AlertFlistSeen from '../componentsAlert/AlertFlistSeen';
-import BottomSheet from '../componentsModal/BottomSheet';
 
 const alertScreen = () => {
   return (
@@ -25,11 +24,10 @@ const alertScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <ScrollView nestedScrollEnabled={true}>
+      <ScrollView nestedScrollEnabled={false}>
         <AlertFlistNotSeen />
         <AlertFlistSeen />
       </ScrollView>
-      {/* <BottomSheet /> */}
     </View>
   );
 };
