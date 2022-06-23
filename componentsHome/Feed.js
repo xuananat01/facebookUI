@@ -240,7 +240,7 @@ const Feed = () => {
       renderItem={item => renderItem(item)}
       keyExtractor={item => item.id}
       scrollEnabled={false}
-      disableVirtualization={false}
+      horizontal={false}
     />
   );
 };

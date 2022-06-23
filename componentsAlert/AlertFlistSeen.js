@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient';
-
 import Ionic from 'react-native-vector-icons/Ionicons';
-
 import BottomSheet from 'react-native-gesture-bottom-sheet';
 
 const {width, height} = Dimensions.get('window');
@@ -82,8 +80,8 @@ const data = [
 const AlertFlistSeen = () => {
   const [onPressInActive, SetOnPressInActive] = useState(null);
 
-  // BottomSheet
-  const bottomSheetRef = useRef();
+  // bottomModal
+  const sheetRef = useRef(null);
   // FlatList
   const ListHeaderComponent = () => {
     return (
@@ -127,36 +125,35 @@ const AlertFlistSeen = () => {
                 {<Text>{item.time}</Text>} {<Text>{item.txtTime}</Text>}
               </Text>
             </View>
-
             <TouchableOpacity
               style={styles.tob}
-              onPress={() => bottomSheetRef.current.show()}>
+              onPress={() => sheetRef.current.show()}>
               <Ionic name="ellipsis-horizontal" size={20} color="#000308" />
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
-        <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-          <BottomSheet
-            draggable={true}
-            hasDraggableIcon
-            ref={bottomSheetRef}
-            height={height / 3}>
-           
-          </BottomSheet>
-        </View>
       </View>
     );
   };
 
   return (
-    <FlatList
-      data={data}
-      keyExtractor={item => item.id}
-      renderItem={renderItem}
-      extraData={onPressInActive}
-      scrollEnabled={false}
-      ListHeaderComponent={ListHeaderComponent}
-    />
+    <View>
+      <FlatList
+        data={data}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+        extraData={onPressInActive}
+        scrollEnabled={false}
+        ListHeaderComponent={ListHeaderComponent}
+      />
+      <BottomSheet
+        draggable={false}
+        hasDraggableIcon
+        ref={sheetRef}
+        height={height / 3}>
+        <Text>Test</Text>
+      </BottomSheet>
+    </View>
   );
 };
 
@@ -224,18 +221,5 @@ const styles = StyleSheet.create({
     color: '#060606',
     marginVertical: 10,
     marginLeft: 15,
-  },
-  header: {
-    width: 55,
-    height: 4,
-    backgroundColor: '#c8cdd1',
-    borderRadius: 2,
-    alignSelf: 'center',
-  },
-  panel: {
-    backgroundColor: '#ffffff',
-    height: 300,
-    borderRadius: 22,
-    alignItems: 'center',
   },
 });

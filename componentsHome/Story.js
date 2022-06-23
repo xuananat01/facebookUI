@@ -221,7 +221,6 @@ const Story = props => {
       keyExtractor={item => item.id}
       data={(data, select)}
       horizontal
-      // extraData={select}
     />
   );
 };

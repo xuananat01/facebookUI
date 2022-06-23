@@ -7,7 +7,7 @@ import StoryTab from '../componentsHome/StoryTab';
 
 const homeScreen = () => {
   return (
-    <ScrollView style={styles.homeScreen} nestedScrollEnabled={true}>
+    <ScrollView style={styles.homeScreen}>
       <ToolBar />
       <StoryTab />
       <Feed />
@@ -18,8 +18,8 @@ const homeScreen = () => {
 export default homeScreen;
 
 const styles = StyleSheet.create({
-  homeScreen:{
+  homeScreen: {
     flex: 1,
-    backgroundColor: 'white'
-  }
-})
+    backgroundColor: 'white',
+  },
+});
