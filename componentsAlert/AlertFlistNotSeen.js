@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   StyleSheet,
   View,
@@ -11,6 +11,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import Ionic from 'react-native-vector-icons/Ionicons';
+import BottomSheet from 'react-native-gesture-bottom-sheet';
 
 const {width, height} = Dimensions.get('window');
 
@@ -74,14 +75,16 @@ const data = [
 
 const AlertFlistNotSeen = () => {
   const [onPressInActive, SetOnPressInActive] = useState(null);
-
+  // bottomModal
+  const sheetRef = useRef(null);
+  // FlatList
   const ListHeaderComponent = () => {
-    return(
+    return (
       <View style={{backgroundColor: '#ffffff'}}>
         <Text style={styles.txtNew}>Mới</Text>
       </View>
-    )
-  }
+    );
+  };
 
   const renderItem = ({item}) => {
     return (
@@ -96,7 +99,8 @@ const AlertFlistNotSeen = () => {
           ]}
           activeOpacity={1}
           onPressIn={() => SetOnPressInActive(item.id)}
-          onPressOut={() => SetOnPressInActive('#ebebeb')}>
+          onPressOut={() => SetOnPressInActive('#ebebeb')}
+          onLongPress={() => sheetRef.current.show()}>
           <View style={styles.alertStory}>
             <Image style={styles.imgAvt} source={{uri: item.uriAvt}} />
             <LinearGradient colors={item.colors} style={styles.icon}>
@@ -117,7 +121,9 @@ const AlertFlistNotSeen = () => {
                 {<Text>{item.time}</Text>} {<Text>{item.txtTime}</Text>}
               </Text>
             </View>
-            <TouchableOpacity style={styles.ellipsis}>
+            <TouchableOpacity
+              style={styles.ellipsis}
+              onPress={() => sheetRef.current.show()}>
               <Ionic name="ellipsis-horizontal" size={20} color="#000308" />
             </TouchableOpacity>
           </View>
@@ -126,14 +132,23 @@ const AlertFlistNotSeen = () => {
     );
   };
   return (
-    <FlatList
-      data={data}
-      keyExtractor={item => item.id}
-      renderItem={renderItem}
-      extraData={onPressInActive}
-      scrollEnabled={false}
-      ListHeaderComponent={ListHeaderComponent}
-    />
+    <View>
+      <FlatList
+        data={data}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+        extraData={onPressInActive}
+        scrollEnabled={false}
+        ListHeaderComponent={ListHeaderComponent}
+      />
+      <BottomSheet
+        draggable={true}
+        hasDraggableIcon
+        ref={sheetRef}
+        height={height / 3}>
+        <Text>Test</Text>
+      </BottomSheet>
+    </View>
   );
 };
 

@@ -104,7 +104,8 @@ const AlertFlistSeen = () => {
           ]}
           activeOpacity={1}
           onPressIn={() => SetOnPressInActive(item.id)}
-          onPressOut={() => SetOnPressInActive('#ebebeb')}>
+          onPressOut={() => SetOnPressInActive('#ebebeb')}
+          onLongPress={() => sheetRef.current.show()}>
           <View style={styles.alertStory}>
             <Image style={styles.imgAvt} source={{uri: item.uriAvt}} />
             <LinearGradient colors={item.colors} style={styles.icon}>
@@ -147,7 +148,7 @@ const AlertFlistSeen = () => {
         ListHeaderComponent={ListHeaderComponent}
       />
       <BottomSheet
-        draggable={false}
+        draggable={true}
         hasDraggableIcon
         ref={sheetRef}
         height={height / 3}>
