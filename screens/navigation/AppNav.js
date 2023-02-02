@@ -95,7 +95,7 @@ const AppNav = () => {
             title: ({color, focused}) => (
               <Ionic
                 size={25}
-                name={focused ? 'videocam' : 'videocam-outline'}
+                name={focused ? 'tv' : 'tv-outline'}
                 color={focused ? '#1878f3' : 'black'}
               />
             ),
@@ -108,7 +108,7 @@ const AppNav = () => {
             title: ({color, focused}) => (
               <Ionic
                 size={25}
-                name={focused ? 'car-sport' : 'car-sport-outline'}
+                name={focused ? 'person-circle' : 'person-circle-outline'}
                 color={focused ? '#1878f3' : 'black'}
               />
             ),

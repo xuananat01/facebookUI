@@ -11,7 +11,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 import Ionic from 'react-native-vector-icons/Ionicons';
-import BottomSheet from 'react-native-gesture-bottom-sheet';
+import RBSheet from 'react-native-raw-bottom-sheet';
 
 const {width, height} = Dimensions.get('window');
 
@@ -76,7 +76,7 @@ const data = [
 const AlertFlistNotSeen = () => {
   const [onPressInActive, SetOnPressInActive] = useState(null);
   // bottomModal
-  const sheetRef = useRef(null);
+  const refRBSheet = useRef();
   // FlatList
   const ListHeaderComponent = () => {
     return (
@@ -100,7 +100,7 @@ const AlertFlistNotSeen = () => {
           activeOpacity={1}
           onPressIn={() => SetOnPressInActive(item.id)}
           onPressOut={() => SetOnPressInActive('#ebebeb')}
-          onLongPress={() => sheetRef.current.show()}>
+          onLongPress={() => refRBSheet.current.open()}>
           <View style={styles.alertStory}>
             <Image style={styles.imgAvt} source={{uri: item.uriAvt}} />
             <LinearGradient colors={item.colors} style={styles.icon}>
@@ -123,11 +123,30 @@ const AlertFlistNotSeen = () => {
             </View>
             <TouchableOpacity
               style={styles.ellipsis}
-              onPress={() => sheetRef.current.show()}>
+              onPress={() => refRBSheet.current.open()}>
               <Ionic name="ellipsis-horizontal" size={20} color="#000308" />
             </TouchableOpacity>
           </View>
         </TouchableOpacity>
+        <RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        closeOnPressMask={true}
+        animationType="none"
+        customStyles={{
+          container: {
+            borderTopLeftRadius: 22,
+            borderTopRightRadius: 22,
+          },
+          draggableIcon: {
+            backgroundColor: '#e6e5e5',
+            width: '12%',
+          },
+        }}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Image style={styles.img} source={{uri: item.uriAvt}} />
+        </View>
+      </RBSheet>
       </View>
     );
   };
@@ -141,13 +160,7 @@ const AlertFlistNotSeen = () => {
         scrollEnabled={false}
         ListHeaderComponent={ListHeaderComponent}
       />
-      <BottomSheet
-        draggable={true}
-        hasDraggableIcon
-        ref={sheetRef}
-        height={height / 3}>
-        <Text>Test</Text>
-      </BottomSheet>
+     
     </View>
   );
 };
@@ -227,5 +240,15 @@ const styles = StyleSheet.create({
     color: '#060606',
     marginVertical: 10,
     marginLeft: 15,
+  },
+  RBsheet: {
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+  },
+  img: {
+    width: 58,
+    height: 58,
+    resizeMode: 'cover',
+    borderRadius: 58 / 2,
   },
 });

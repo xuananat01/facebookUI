@@ -13,7 +13,7 @@ const data = [
   {
     id: 1,
     uriImg:
-      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/118692869_2741914472756710_110275499777702941_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=EBPyglwMUfwAX-qI3ub&_nc_ht=scontent.fhan14-2.fna&oh=00_AT8cfGeR_bbmmeVEwKyRMpHMbKZajs6xoCWeuz5T6sITbw&oe=62DEE03E',
+      'https://images.unsplash.com/photo-1531416368398-ab7b33c61a53?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHw%3D&w=1000&q=80',
     icon: 'flag',
     iconColor: '#ec682c',
     txtName: 'VTV Giải trí',
@@ -21,7 +21,7 @@ const data = [
   {
     id: 2,
     uriImg:
-      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/94259806_2635789610035864_7766076443477409792_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=cHi4pXeUttAAX8emQOT&tn=ngU6Do8Xqa4mJ8hO&_nc_ht=scontent.fhan14-2.fna&oh=00_AT9EWd3VC7_6eA6VzcgEccCi0nnQtf8G6KGe2JXoZi6yFg&oe=62DFCF90',
+      'https://images.unsplash.com/photo-1445999794508-1e24b2f535ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXRodW1ibmFpbHx8MTIzNTgwN3x8ZW58MHx8fHw%3D&auto=format&fit=crop&w=420&q=60',
     icon: 'flag',
     iconColor: '#ec682c',
     txtName: 'VNE',
@@ -29,7 +29,7 @@ const data = [
   {
     id: 3,
     uriImg:
-      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/94269020_2635789433369215_8410872809814753280_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=5wjcxoABbP4AX9JtNoQ&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-Hhf70U8NLL5Zwxggg4RcDCSmbvyBGAT692sD92dGheQ&oe=62DF27C5',
+      'https://media.istockphoto.com/id/1171769670/photo/lake-peyto-of-banff-national-park-in-canada.jpg?s=170667a&w=0&k=20&c=D7sdOO6BZdpAhzMq0swmTuTFY8EtASuf-rZw1n9OsjQ=',
     icon: 'people-sharp',
     iconColor: '#25aff9',
     txtName: 'Realme Việt Nam',
@@ -37,7 +37,7 @@ const data = [
   {
     id: 4,
     uriImg:
-      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/88955687_2591181534496672_6497212709031903232_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=HF2mNFSVvKIAX89CUQ8&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-xTZY07yZnHb4OhK4hBQcxZuOzdAgWchEf9CzNk09hOA&oe=62E0D604',
+      'https://cdn.wallpapersafari.com/1/17/ZMBC10.jpg',
     icon: 'flag',
     iconColor: '#ec682c',
     txtName: 'Liên Minh Huyền Thoại',
@@ -88,6 +88,7 @@ const Shortcuts = () => {
       keyExtractor={item => item.id}
       renderItem={item => renderItem(item)}
       horizontal={true}
+      showsHorizontalScrollIndicator={false}
     />
   );
 };

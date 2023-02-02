@@ -40,7 +40,7 @@ const Foryou = () => {
         </View>
       </ScrollView>
       <View style={styles.line} />
-      <ScrollView horizontal style={{marginTop: 10}}>
+      <ScrollView horizontal style={{marginTop: 10}} showsHorizontalScrollIndicator={false}>
         <View style={styles.vwTime}>
           <Ionic
             name="time"

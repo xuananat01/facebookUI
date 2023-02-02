@@ -30,7 +30,7 @@ const ScrollTitle = () => {
 
   return (
     <View>
-      <ScrollView horizontal style={styles.srcTop} nestedScrollEnabled={true}>
+      <ScrollView horizontal style={styles.srcTop} nestedScrollEnabled={true} showsHorizontalScrollIndicator={false} >
         <View style={styles.vwScroll}>
           {tabs.map((e, i) => (
             <TouchableOpacity
