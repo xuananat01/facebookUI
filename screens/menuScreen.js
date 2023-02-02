@@ -12,6 +12,8 @@ import RBSheet from 'react-native-raw-bottom-sheet';
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Shortcuts from '../componentsMenu/Shortcuts';
 import GridLayout from '../componentsMenu/GridLayout';
+import ShowMore from '../componentsMenu/ShowMore';
+import RSCommunity from '../componentsMenu/RSCommunity';
 
 const {width, height} = Dimensions.get('window');
 
@@ -19,8 +21,10 @@ const tabs = ['Nguyễn Xuân An', 'Nguyễn Thị Linh'];
 
 const menuScreen = () => {
   const refRBSheet = useRef();
-
+  //picker
   const [selected, setSelected] = useState();
+  //showmore
+  const [show, setShow] = useState(true);
 
   return (
     <ScrollView style={styles.container}>
@@ -71,6 +75,23 @@ const menuScreen = () => {
       <Shortcuts />
       <Text style={styles.txtTitleBelow}>Tất cả lối tắt</Text>
       <GridLayout />
+      <View>
+        {show ? <ShowMore /> : null}
+        <TouchableOpacity
+          style={styles.tobShowmore}
+          onPress={() => setShow(!show)}>
+          {show ? (
+            <Text style={styles.txtShowHide}>Ẩn bớt</Text>
+          ) : (
+            <Text style={styles.txtShowHide}>Xem thêm</Text>
+          )}
+        </TouchableOpacity>
+      </View>
+
+      <View style={{width, height: 1, backgroundColor: '#C9ccd1', marginTop:15}}></View> 
+
+      <RSCommunity/>
+
       <RBSheet
         ref={refRBSheet}
         closeOnDragDown={true}
@@ -152,17 +173,32 @@ const menuScreen = () => {
         </View>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <Text
-              style={{
-                width: '92%',
-                height: 1,
-                backgroundColor: '#C9ccd1',
-                marginBottom: 15,
-              }}
-            />
+            style={{
+              width: '92%',
+              height: 1,
+              backgroundColor: '#C9ccd1',
+              marginBottom: 15,
+            }}
+          />
         </View>
-        <TouchableOpacity style={{flexDirection:'row', alignItems:'center'}}>
-          <Image style={[styles.imgAvt, {backgroundColor: '#C9ccd1', borderWidth: 1, borderColor: '#999993'}]} />
-          <Text style={{fontSize: 18, fontWeight: 'bold', marginLeft: 15, color:'black'}}>
+        <TouchableOpacity style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Image
+            style={[
+              styles.imgAvt,
+              {
+                backgroundColor: '#C9ccd1',
+                borderWidth: 1,
+                borderColor: '#999993',
+              },
+            ]}
+          />
+          <Text
+            style={{
+              fontSize: 18,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              color: 'black',
+            }}>
             Đăng nhập bằng tài khoản khác
           </Text>
         </TouchableOpacity>
@@ -175,8 +211,8 @@ export default menuScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f1f2f7',
+    width,
+    backgroundColor: '#f1f2f4',
   },
   txtTitle: {
     fontSize: 24,
@@ -233,5 +269,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 4.65,
     elevation: 4,
+  },
+  tobShowmore: {
+    width: '92%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: '#e6e7ec',
+    marginTop: 20,
+    marginHorizontal: '4%',
+    borderRadius: 8,
+  },
+  txtShowHide: {
+    fontSize: 16,
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
