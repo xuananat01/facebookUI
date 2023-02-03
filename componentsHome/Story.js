@@ -142,7 +142,7 @@ const Story = props => {
 
   const [select, setSelect] = useState([data1, data2, data3]);
 
-  //multi pick 
+  //multi pick
   const handleOnpress = item => {
     const newItem = select.map(val => {
       if (val.id === item.id) {

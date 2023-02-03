@@ -16,10 +16,7 @@ const ToolBar = () => {
   return (
     <View>
       <View style={{flexDirection: 'row', marginTop: 15}}>
-        <Image
-          style={styles.img}
-          source={require('../image/user.jpg')}
-        />
+        <Image style={styles.img} source={require('../image/user.jpg')} />
         <View style={styles.vwIcon}>
           <Ionic name="happy" size={16} color="#f7b928" />
         </View>

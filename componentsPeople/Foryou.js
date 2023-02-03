@@ -28,11 +28,11 @@ const Foryou = () => {
             <TouchableOpacity
               style={[
                 styles.tobTitle,
-                selected == i && {backgroundColor: '#e8f3fd'},
+                selected === i && {backgroundColor: '#e8f3fd'},
               ]}
               onPress={() => setSelected(i)}>
               <Text
-                style={[styles.txtTitle, selected == i && {color: '#226dd3'}]}>
+                style={[styles.txtTitle, selected === i && {color: '#226dd3'}]}>
                 {e}
               </Text>
             </TouchableOpacity>
@@ -40,7 +40,10 @@ const Foryou = () => {
         </View>
       </ScrollView>
       <View style={styles.line} />
-      <ScrollView horizontal style={{marginTop: 10}} showsHorizontalScrollIndicator={false}>
+      <ScrollView
+        horizontal
+        style={{marginTop: 10}}
+        showsHorizontalScrollIndicator={false}>
         <View style={styles.vwTime}>
           <Ionic
             name="time"

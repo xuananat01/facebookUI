@@ -73,7 +73,7 @@ const AppNav = () => {
       <Tab.Navigator
         tabBarOptions={{
           style: {
-            elevation:2,
+            elevation: 2,
             borderTopWidth: 0,
           },
         }}>

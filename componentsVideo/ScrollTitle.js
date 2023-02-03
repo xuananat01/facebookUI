@@ -18,7 +18,7 @@ const ScrollTitle = () => {
   const [selected, setSelected] = useState(0);
   const [title, setTitle] = useState([0]);
 
-  const gotoTab = (i) => {
+  const gotoTab = i => {
     setSelected(i);
     setTitle(tabs[i]);
     renderChose();
@@ -30,17 +30,21 @@ const ScrollTitle = () => {
 
   return (
     <View>
-      <ScrollView horizontal style={styles.srcTop} nestedScrollEnabled={true} showsHorizontalScrollIndicator={false} >
+      <ScrollView
+        horizontal
+        style={styles.srcTop}
+        nestedScrollEnabled={true}
+        showsHorizontalScrollIndicator={false}>
         <View style={styles.vwScroll}>
           {tabs.map((e, i) => (
             <TouchableOpacity
               style={[
                 styles.tobTitle,
-                selected == i && {backgroundColor: '#e8f3fd'},
+                selected === i && {backgroundColor: '#e8f3fd'},
               ]}
               onPress={() => gotoTab(i)}>
               <Text
-                style={[styles.txtTitle, selected == i && {color: '#226dd3'}]}>
+                style={[styles.txtTitle, selected === i && {color: '#226dd3'}]}>
                 {e}
               </Text>
             </TouchableOpacity>

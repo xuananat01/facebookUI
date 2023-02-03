@@ -54,8 +54,7 @@ const data = [
   },
   {
     id: 5,
-    uriImg:
-      'https://static.automotor.vn/images/upload/2021/06/16/lambo.jpeg',
+    uriImg: 'https://static.automotor.vn/images/upload/2021/06/16/lambo.jpeg',
     money: '250.000',
     txtUnderline: '$',
     txtInformation: 'bwm car',
@@ -65,8 +64,7 @@ const data = [
   },
   {
     id: 6,
-    uriImg:
-      'https://static.automotor.vn/images/upload/2021/06/16/lambo.jpeg',
+    uriImg: 'https://static.automotor.vn/images/upload/2021/06/16/lambo.jpeg',
     money: '250.000',
     txtUnderline: '$',
     txtInformation: 'bentley car',

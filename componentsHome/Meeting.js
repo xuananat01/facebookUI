@@ -1,7 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image,Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
 
-import Ionic from 'react-native-vector-icons/Ionicons'
+import Ionic from 'react-native-vector-icons/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
@@ -105,5 +105,5 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize: 16,
     fontWeight: 'bold',
-  }
+  },
 });

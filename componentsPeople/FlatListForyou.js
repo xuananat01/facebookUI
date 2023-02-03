@@ -63,7 +63,7 @@ const Data = [
 const FlatListForyou = () => {
   const [select, setSelect] = useState(Data);
 
-  // picker multi/selector 
+  // picker multi/selector
   const handleOnpress = item => {
     const newItem = select.map(val => {
       if (val.id === item.id) {

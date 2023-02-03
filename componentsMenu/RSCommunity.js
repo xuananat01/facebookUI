@@ -4,7 +4,6 @@ import {
   View,
   Text,
   Dimensions,
-  FlatList,
   TouchableOpacity,
 } from 'react-native';
 import Ionic from 'react-native-vector-icons/Ionicons';
@@ -46,8 +45,7 @@ const RSCommunity = () => {
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <View style={{flex: 0.49}}>
-          <TouchableOpacity
-            style={[styles.detailView, {marginLeft: 15,}]}>
+          <TouchableOpacity style={[styles.detailView, {marginLeft: 15}]}>
             <Ionic name="partly-sunny" color="#40cc5e" size={26} />
             <Text
               style={{
@@ -59,11 +57,9 @@ const RSCommunity = () => {
               Trung tâm khoa học khí hậu
             </Text>
           </TouchableOpacity>
-
         </View>
         <View style={{flex: 0.49}}>
-          <TouchableOpacity
-            style={[styles.detailView, {marginRight: 15,}]}>
+          <TouchableOpacity style={[styles.detailView, {marginRight: 15}]}>
             <Ionic name="water" color="#f65a75" size={26} />
             <Text
               style={{
@@ -77,21 +73,26 @@ const RSCommunity = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{width: '49%', marginLeft: '51%', position: 'relative', top: -15}}>
-          <TouchableOpacity
-            style={[styles.detailView, {marginRight: 15,}]}>
-            <Ionic name="heart-half" color="#fbc236" size={26} />
-            <Text
-              style={{
-                fontSize: 16,
-                fontWeight: 'bold',
-                color: 'black',
-                marginTop: 5,
-              }}>
-              Sức khỏe cảm xúc
-            </Text>
-          </TouchableOpacity>
-        </View>
+      <View
+        style={{
+          width: '49%',
+          marginLeft: '51%',
+          position: 'relative',
+          top: -15,
+        }}>
+        <TouchableOpacity style={[styles.detailView, {marginRight: 15}]}>
+          <Ionic name="heart-half" color="#fbc236" size={26} />
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: 'bold',
+              color: 'black',
+              marginTop: 5,
+            }}>
+            Sức khỏe cảm xúc
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

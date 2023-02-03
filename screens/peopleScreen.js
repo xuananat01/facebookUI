@@ -10,10 +10,9 @@ import {
 
 import Ionic from 'react-native-vector-icons/Ionicons';
 import Foryou from '../componentsPeople/Foryou';
-import Play from '../componentsPeople/Play'
+import Play from '../componentsPeople/Play';
 
 const {width, height} = Dimensions.get('window');
-
 
 const peopleScreen = () => {
   return (

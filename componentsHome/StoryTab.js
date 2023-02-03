@@ -17,7 +17,7 @@ const StoryTab = () => {
   const [selected, setSelected] = useState(0);
   const [title, setTitle] = useState(tabs[0]);
 
-  const gotoTab = (i) => {
+  const gotoTab = i => {
     setSelected(i);
     setTitle(tabs[i]);
     renderStory(); //render lại view với title mới
@@ -33,10 +33,10 @@ const StoryTab = () => {
         {tabs.map((e, i) => (
           <TouchableOpacity style={styles.tobTitle} onPress={() => gotoTab(i)}>
             <Text
-              style={[styles.txtTitle, selected == i && {color: '#1a62ca'}]}>
+              style={[styles.txtTitle, selected === i && {color: '#1a62ca'}]}>
               {e}
             </Text>
-            {selected == i && <View style={styles.line} />}
+            {selected === i && <View style={styles.line} />}
           </TouchableOpacity>
         ))}
       </View>

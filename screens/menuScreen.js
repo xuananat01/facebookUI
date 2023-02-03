@@ -7,6 +7,7 @@ import {
   Dimensions,
   ScrollView,
   Image,
+  Alert,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import Ionic from 'react-native-vector-icons/Ionicons';
@@ -204,7 +205,15 @@ const menuScreen = () => {
         {setup ? null : <SetupPrivacy />}
       </View>
       {/* log out */}
-      <TouchableOpacity style={[styles.tobShowmore, {marginBottom: 15}]}>
+      <TouchableOpacity
+        style={[styles.tobShowmore, {marginBottom: 15}]}
+        onPress={() =>
+          Alert.alert('Đăng xuất', 'Bạn có muốn đăng xuất?', [
+            {
+              text: 'Có',
+            },
+          ])
+        }>
         <Text style={styles.txtShowHide}>Đăng xuất</Text>
       </TouchableOpacity>
 
@@ -276,11 +285,11 @@ const menuScreen = () => {
                   <Ionic
                     style={{position: 'absolute', right: 20}}
                     name={
-                      selected == i
+                      selected === i
                         ? 'radio-button-on-outline'
                         : 'radio-button-off-outline'
                     }
-                    color={selected == i ? 'blue' : '#C9ccd1'}
+                    color={selected === i ? 'blue' : '#C9ccd1'}
                     size={24}
                   />
                 </View>

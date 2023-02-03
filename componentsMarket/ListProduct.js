@@ -54,8 +54,7 @@ const ListProduct = () => {
         </TouchableOpacity>
       </View>
       <View style={{justifyContent: 'space-around'}}>
-
-      <FlContent />
+        <FlContent />
       </View>
     </View>
   );
