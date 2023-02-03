@@ -14,6 +14,8 @@ import Shortcuts from '../componentsMenu/Shortcuts';
 import GridLayout from '../componentsMenu/GridLayout';
 import ShowMore from '../componentsMenu/ShowMore';
 import RSCommunity from '../componentsMenu/RSCommunity';
+import HelpSuppot from '../componentsMenu/HelpSupport';
+import SetupPrivacy from '../componentsMenu/SetupPrivacy';
 
 const {width, height} = Dimensions.get('window');
 
@@ -25,6 +27,15 @@ const menuScreen = () => {
   const [selected, setSelected] = useState();
   //showmore
   const [show, setShow] = useState(true);
+
+  //show RSCommunity
+  const [isShow, setIsShow] = useState(true);
+
+  //show HeplSupport
+  const [click, setClick] = useState(true);
+
+  //show setup and privacy
+  const [setup, setSetup] = useState(true);
 
   return (
     <ScrollView style={styles.container}>
@@ -75,23 +86,129 @@ const menuScreen = () => {
       <Shortcuts />
       <Text style={styles.txtTitleBelow}>Tất cả lối tắt</Text>
       <GridLayout />
+      {/* showmore showless */}
       <View>
-        {show ? <ShowMore /> : null}
+        {show ? null : <ShowMore />}
         <TouchableOpacity
           style={styles.tobShowmore}
           onPress={() => setShow(!show)}>
           {show ? (
-            <Text style={styles.txtShowHide}>Ẩn bớt</Text>
-          ) : (
             <Text style={styles.txtShowHide}>Xem thêm</Text>
+          ) : (
+            <Text style={styles.txtShowHide}>Ẩn bớt</Text>
           )}
         </TouchableOpacity>
       </View>
+      {/** line */}
+      <View
+        style={{
+          width,
+          height: 1,
+          backgroundColor: '#C9ccd1',
+          marginTop: 15,
+        }}
+      />
+      {/* RSCommunity */}
+      <View>
+        <TouchableOpacity
+          style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}
+          onPress={() => setIsShow(!isShow)}>
+          <Ionic name="heart" size={32} color="#889ba9" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'black',
+              marginLeft: 10,
+            }}>
+            Nguồn lực cộng đồng
+          </Text>
+          <View style={{position: 'absolute', right: 10}}>
+            {isShow ? (
+              <Ionic name="chevron-down" size={22} color="#606163" />
+            ) : (
+              <Ionic name="chevron-up" size={22} color="#606163" />
+            )}
+          </View>
+        </TouchableOpacity>
+        {isShow ? null : <RSCommunity />}
+      </View>
 
-      <View style={{width, height: 1, backgroundColor: '#C9ccd1', marginTop:15}}></View> 
+      {/** line */}
+      <View
+        style={{
+          width,
+          height: 1,
+          backgroundColor: '#C9ccd1',
+        }}
+      />
 
-      <RSCommunity/>
+      {/* help and support */}
+      <View>
+        <TouchableOpacity
+          style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}
+          onPress={() => setClick(!click)}>
+          <Ionic name="help-circle" size={38} color="#b5c9d2" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'black',
+              marginLeft: 10,
+            }}>
+            Trợ giúp & hỗ trợ
+          </Text>
+          <View style={{position: 'absolute', right: 10}}>
+            {click ? (
+              <Ionic name="chevron-down" size={22} color="#606163" />
+            ) : (
+              <Ionic name="chevron-up" size={22} color="#606163" />
+            )}
+          </View>
+        </TouchableOpacity>
+        {click ? null : <HelpSuppot />}
+      </View>
 
+      {/** line */}
+      <View
+        style={{
+          width,
+          height: 1,
+          backgroundColor: '#C9ccd1',
+        }}
+      />
+
+      {/* settings and privacy */}
+      <View>
+        <TouchableOpacity
+          style={{flexDirection: 'row', margin: 10, alignItems: 'center'}}
+          onPress={() => setSetup(!setup)}>
+          <Ionic name="settings" size={38} color="#a1b4bb" />
+          <Text
+            style={{
+              fontSize: 20,
+              fontWeight: 'bold',
+              color: 'black',
+              marginLeft: 10,
+            }}>
+            Cài đặt & quyền riêng tư
+          </Text>
+          <View style={{position: 'absolute', right: 10}}>
+            {setup ? (
+              <Ionic name="chevron-down" size={22} color="#606163" />
+            ) : (
+              <Ionic name="chevron-up" size={22} color="#606163" />
+            )}
+          </View>
+        </TouchableOpacity>
+        {setup ? null : <SetupPrivacy />}
+      </View>
+      {/* log out */}
+      <TouchableOpacity style={[styles.tobShowmore, {marginBottom: 15}]}>
+        <Text style={styles.txtShowHide}>Đăng xuất</Text>
+      </TouchableOpacity>
+
+      {/* bottomsheet */}
       <RBSheet
         ref={refRBSheet}
         closeOnDragDown={true}
