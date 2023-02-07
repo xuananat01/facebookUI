@@ -5,18 +5,17 @@ import {
   Text,
   TouchableOpacity,
   Dimensions,
-  Animated,
 } from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
 import Ionic from 'react-native-vector-icons/Ionicons';
 
-import homeScreen from '../homeScreen';
-import videoScreen from '../videoScreen';
-import marketScreen from '../marketScreen';
-import peopleScreen from '../peopleScreen';
-import alertScreen from '../alertScreen';
-import menuScreen from '../menuScreen';
+import HomeScreen from '../HomeScreen';
+import VideoScreen from '../VideoScreen';
+import MarketScreen from '../MarketScreen';
+import PeopleScreen from '../PeopleScreen';
+import AlertScreen from '../AlertScreen';
+import MenuScreen from '../MenuScreen';
 
 const {width, height} = Dimensions.get('window');
 
@@ -87,7 +86,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={homeScreen}
+          component={HomeScreen}
           name="home"
         />
         <Tab.Screen
@@ -100,7 +99,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={videoScreen}
+          component={VideoScreen}
           name="video"
         />
         <Tab.Screen
@@ -113,7 +112,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={marketScreen}
+          component={MarketScreen}
           name="market"
         />
         <Tab.Screen
@@ -126,7 +125,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={peopleScreen}
+          component={PeopleScreen}
           name="people"
         />
         <Tab.Screen
@@ -139,7 +138,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={alertScreen}
+          component={AlertScreen}
           name="alert"
         />
         <Tab.Screen
@@ -152,7 +151,7 @@ const AppNav = () => {
               />
             ),
           }}
-          component={menuScreen}
+          component={MenuScreen}
           name="menu"
         />
       </Tab.Navigator>

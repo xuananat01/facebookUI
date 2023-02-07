@@ -14,7 +14,7 @@ import Play from '../componentsPeople/Play';
 
 const {width, height} = Dimensions.get('window');
 
-const peopleScreen = () => {
+const PeopleScreen = () => {
   return (
     <View style={styles.container}>
       <View style={{width, flexDirection: 'row', paddingBottom: 10}}>
@@ -35,7 +35,7 @@ const peopleScreen = () => {
   );
 };
 
-export default peopleScreen;
+export default PeopleScreen;
 
 const styles = StyleSheet.create({
   container: {

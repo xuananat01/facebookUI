@@ -12,7 +12,7 @@ import ScrollTitle from '../componentsVideo/ScrollTitle';
 
 const {width, height} = Dimensions.get('window');
 
-const videoScreen = () => {
+const VideoScreen = () => {
   return (
     <View style={styles.container}>
       <View style={{width, flexDirection: 'row'}}>
@@ -31,7 +31,7 @@ const videoScreen = () => {
   );
 };
 
-export default videoScreen;
+export default VideoScreen;
 
 const styles = StyleSheet.create({
   container: {

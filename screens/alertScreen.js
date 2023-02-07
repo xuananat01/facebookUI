@@ -13,7 +13,7 @@ import Ionic from 'react-native-vector-icons/Ionicons';
 import AlertFlistNotSeen from '../componentsAlert/AlertFlistNotSeen';
 import AlertFlistSeen from '../componentsAlert/AlertFlistSeen';
 
-const alertScreen = () => {
+const AlertScreen = () => {
   return (
     <View style={styles.container}>
       <View style={{width, flexDirection: 'row', paddingBottom: 10}}>
@@ -32,7 +32,7 @@ const alertScreen = () => {
   );
 };
 
-export default alertScreen;
+export default AlertScreen;
 
 const styles = StyleSheet.create({
   container: {

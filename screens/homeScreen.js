@@ -5,7 +5,7 @@ import ToolBar from '../componentsHome/ToolBar';
 import Feed from '../componentsHome/Feed';
 import StoryTab from '../componentsHome/StoryTab';
 
-const homeScreen = () => {
+const HomeScreen = () => {
   return (
     <ScrollView style={styles.homeScreen}>
       <ToolBar />
@@ -15,7 +15,7 @@ const homeScreen = () => {
   );
 };
 
-export default homeScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   homeScreen: {

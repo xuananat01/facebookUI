@@ -22,7 +22,7 @@ const {width, height} = Dimensions.get('window');
 
 const tabs = ['Nguyễn Xuân An', 'Nguyễn Thị Linh'];
 
-const menuScreen = () => {
+const MenuScreen = () => {
   const refRBSheet = useRef();
   //picker
   const [selected, setSelected] = useState();
@@ -333,7 +333,7 @@ const menuScreen = () => {
   );
 };
 
-export default menuScreen;
+export default MenuScreen;
 
 const styles = StyleSheet.create({
   container: {

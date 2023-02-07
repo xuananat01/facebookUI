@@ -14,7 +14,7 @@ import Ionic from 'react-native-vector-icons/Ionicons';
 
 const {width, height} = Dimensions.get('window');
 
-const marketScreen = () => {
+const MarketScreen = () => {
   return (
     <View style={styles.container}>
       <View style={{width, flexDirection: 'row', paddingBottom: 10}}>
@@ -35,7 +35,7 @@ const marketScreen = () => {
   );
 };
 
-export default marketScreen;
+export default MarketScreen;
 
 const styles = StyleSheet.create({
   container: {

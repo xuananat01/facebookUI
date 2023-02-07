@@ -6162,7 +6162,7 @@
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.5.0.tgz"
   "version" "4.5.0"
 
-"react-native-screens@>= 3.0.0":
+"react-native-screens@^3.19.0", "react-native-screens@>= 3.0.0":
   "integrity" "sha512-Ehsmy7jr3H3j5pmN+/FqsAaIAD+k+xkcdePfLcg4rYRbN5X7fJPgaqhcmiCcZ0YxsU8ttsstP9IvRLNQuIkRRA=="
   "resolved" "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.19.0.tgz"
   "version" "3.19.0"
